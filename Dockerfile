@@ -1,6 +1,8 @@
-FROM python:3.8-slim-buster
+FROM python:3.9-slim-buster
 WORKDIR /app
-COPY . /app
-RUN pip install -r requirement.txt
+COPY ./requirement.txt .
+RUN pip install --upgrade pip && pip install -r requirement.txt
+COPY . .
 EXPOSE 5000
-CMD [“python”, “app.py”]
+ENV FLASK_APP=app.py
+CMD ["flask", "run", "--host=0.0.0.0"]
