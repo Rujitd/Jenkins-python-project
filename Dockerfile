@@ -4,7 +4,4 @@ COPY . /app
 RUN pip install -r requirement.txt
 EXPOSE 5000
 CMD [“python”, “app.py”]
-<<<<<<< HEAD
 
-=======
->>>>>>> 0c735ad (1st commit)
